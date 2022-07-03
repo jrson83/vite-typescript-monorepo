@@ -1,0 +1,24 @@
+{
+  "name": "vite-typescript-monorepo",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "clean:modules": "pnpm run clean:shared && rm -rf pnpm-lock.yaml && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,vue,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,json,md}\"",
+    "build:shared": "pnpm run clean:shared && pnpm run --filter @module/shared build",
+    "clean:shared": "pnpm run --filter @module/shared clean",
+    "watch:shared": "pnpm run clean:shared && pnpm run --filter @module/shared watch",
+    "dev": "pnpm run build:shared && pnpm run --filter @module/vite dev"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "packageManager": "pnpm@7.5.0"
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    "tsBuildInfoFile": "../../.build-cache/module-shared.tsbuildinfo"
+  },
+  "include": ["src"]
+}

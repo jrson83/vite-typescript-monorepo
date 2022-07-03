@@ -1,0 +1,19 @@
+{
+  "name": "@module/shared",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "dist",
+    "src",
+    "package.json"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist && pnpm run clean:build",
+    "clean:build": "tsc --build --clean",
+    "build": "tsc --build",
+    "watch": "tsc --build --watch"
+  }
+}
