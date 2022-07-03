@@ -4,7 +4,7 @@ import './App.css'
 import { a } from '@module/shared'
 
 function App() {
-  console.log(a)
+  console.log({ a })
 
   const [count, setCount] = useState(0)
 
